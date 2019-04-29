@@ -1,0 +1,11 @@
+{
+  "name": "apollo_graphql_react",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "meteor-node-stubs": "^0.4.1"
+  }
+}
