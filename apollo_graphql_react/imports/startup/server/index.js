@@ -18,6 +18,6 @@ const resolvers = {
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
-})
+});
 
 createApolloServer({ schema });

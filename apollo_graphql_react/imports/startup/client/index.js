@@ -26,5 +26,5 @@ const ApolloApp = () => (
 );
 
 Meteor.startup(() => {
-  render(<App />, document.getElementById("app"));
+  render(<ApolloApp />, document.getElementById("app"));
 });
