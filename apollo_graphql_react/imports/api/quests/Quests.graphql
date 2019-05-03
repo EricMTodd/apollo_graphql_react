@@ -1,0 +1,8 @@
+# questName
+# createdAt
+# [objectiveId]
+
+type Quests {
+  _id: String!
+  name: String!
+}
