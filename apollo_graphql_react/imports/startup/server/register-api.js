@@ -5,7 +5,8 @@ import QuestsSchema from "../../api/quests/Quests.graphql";
 
 const testSchema = `
 type Query {
-  hi: String
+  init: String
+  quests: [Quest]
 }
 `;
 
@@ -15,6 +16,18 @@ const resolvers = {
   Query: {
     init() {
       return "Initializing fragtrak";
+    },
+    quests() {
+      return [
+        {
+          _id: "INSERT_SUBJECT_GENERIC_STRING_HERE",
+          name: "INSERT_SUBJECT_QUEST_NAME_HERE"
+        },
+        {
+          _id: "INSERT_SUBJECT_GENERIC_STRING_HERE2",
+          name: "INSERT_SUBJECT_QUEST_NAME_HERE2"
+        }
+      ];
     }
   }
 };

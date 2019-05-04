@@ -2,7 +2,7 @@
 # createdAt
 # [objectiveId]
 
-type Quests {
+type Quest {
   _id: String!
   name: String!
 }
