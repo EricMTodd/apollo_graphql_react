@@ -1,7 +1,9 @@
 import { createApolloServer } from "meteor/apollo";
 import { makeExecutableSchema } from "graphql-tools";
+import merge from "lodash/merge";
 
 import QuestsSchema from "../../api/quests/Quests.graphql";
+import QuestsResolvers from "../../api/quests/resolvers";
 
 const testSchema = `
 type Query {
@@ -12,25 +14,17 @@ type Query {
 
 const typeDefs = [testSchema, QuestsSchema];
 
-const resolvers = {
+const testResolvers = {
   Query: {
     init() {
       return "Initializing fragtrak";
-    },
-    quests() {
-      return [
-        {
-          _id: "INSERT_SUBJECT_GENERIC_STRING_HERE",
-          name: "INSERT_SUBJECT_QUEST_NAME_HERE"
-        },
-        {
-          _id: "INSERT_SUBJECT_GENERIC_STRING_HERE2",
-          name: "INSERT_SUBJECT_QUEST_NAME_HERE2"
-        }
-      ];
     }
   }
 };
+
+const resolvers = merge(testResolvers, QuestsResolvers);
+
+console.log(resolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,
