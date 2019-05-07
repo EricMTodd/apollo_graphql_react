@@ -1,12 +1,14 @@
 import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
+import QuestForm from "./QuestForm";
 
 const App = ({ data }) => {
   if (data.loading) return null;
   return (
     <div>
       <h1>{data.init}</h1>
+      <QuestForm />
       <ul>
         {" "}
         {data.quests.map(quest => (

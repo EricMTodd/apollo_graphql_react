@@ -4,7 +4,7 @@ import merge from "lodash/merge";
 
 import QuestsSchema from "../../api/quests/Quests.graphql";
 import QuestsResolvers from "../../api/quests/resolvers";
-
+// graphql workaround x1
 const testSchema = `
 type Query {
   init: String

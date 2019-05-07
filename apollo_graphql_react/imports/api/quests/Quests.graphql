@@ -1,8 +1,8 @@
-# questName
-# createdAt
-# [objectiveId]
-
 type Quest {
   _id: String!
   name: String!
+}
+
+type Mutation {
+  createQuest: Quest
 }
