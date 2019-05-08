@@ -3,8 +3,8 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
 const createQuest = gql`
-  mutation createQuest {
-    createQuest {
+  mutation createQuest($name: String!) {
+    createQuest(name: $name) {
       _id
     }
   }
@@ -12,8 +12,18 @@ const createQuest = gql`
 
 class QuestForm extends Component {
   submitForm = () => {
-    console.log(this.name.value);
-    this.props.createQuest();
+    this.props
+      .createQuest({
+        variables: {
+          name: this.name.value
+        }
+      })
+      .then(({ data }) => {
+        this.props.refetch();
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   render() {

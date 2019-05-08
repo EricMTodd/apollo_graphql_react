@@ -8,7 +8,7 @@ const App = ({ data }) => {
   return (
     <div>
       <h1>{data.init}</h1>
-      <QuestForm />
+      <QuestForm refetch={data.refetch} />
       <ul>
         {" "}
         {data.quests.map(quest => (

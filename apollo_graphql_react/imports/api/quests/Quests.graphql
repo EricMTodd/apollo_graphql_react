@@ -4,5 +4,5 @@ type Quest {
 }
 
 type Mutation {
-  createQuest: Quest
+  createQuest(name: String!): Quest
 }

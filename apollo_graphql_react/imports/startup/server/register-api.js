@@ -4,7 +4,7 @@ import merge from "lodash/merge";
 
 import QuestsSchema from "../../api/quests/Quests.graphql";
 import QuestsResolvers from "../../api/quests/resolvers";
-// graphql workaround x1
+// graphql workaround x4
 const testSchema = `
 type Query {
   init: String
@@ -17,7 +17,7 @@ const typeDefs = [testSchema, QuestsSchema];
 const testResolvers = {
   Query: {
     init() {
-      return "Initializing fragtrak";
+      return "The Quest Log";
     }
   }
 };

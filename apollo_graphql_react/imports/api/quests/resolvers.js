@@ -8,11 +8,12 @@ export default {
   },
 
   Mutation: {
-    createQuest() {
-      console.log("Successfully ran createQuest Mutation!");
-      // const questId = Quests.insert({
-      //   name: "Pilot Episode"
-      // });
+    createQuest(obj, { name }, context) {
+      console.log(name);
+      const questId = Quests.insert({
+        name
+      });
+      return Quests.findOne(questId);
     }
   }
 };
