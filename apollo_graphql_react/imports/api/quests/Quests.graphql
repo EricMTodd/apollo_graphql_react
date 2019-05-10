@@ -5,4 +5,5 @@ type Quest {
 
 type Mutation {
   createQuest(name: String!): Quest
+  deleteQuest(_id: _id!): Quest
 }
