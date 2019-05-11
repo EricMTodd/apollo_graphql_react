@@ -2,7 +2,6 @@ import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import QuestForm from "./QuestForm";
-import DeleteQuest from "./DeleteQuest";
 
 const App = ({ data }) => {
   if (data.loading) return null;
@@ -13,10 +12,7 @@ const App = ({ data }) => {
       <ul>
         {" "}
         {data.quests.map(quest => (
-          <li key={quest._id}>
-            {quest.name}
-            <DeleteQuest refetch={data.refetch} />
-          </li>
+          <li key={quest._id}>{quest.name}</li>
         ))}
       </ul>
     </div>
